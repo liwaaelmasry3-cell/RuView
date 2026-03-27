@@ -17,7 +17,7 @@ data:
     @include systemd.conf
     @include wifi-densepose.conf
 
-  kubernetes.conf: |
+  kubernetes.conf:|
     # Kubernetes logs configuration
     <source>
       @type tail
