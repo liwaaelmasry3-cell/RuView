@@ -29,7 +29,6 @@ env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
   KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
-
 jobs:
   # Pre-deployment checks
   pre-deployment:
