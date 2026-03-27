@@ -1,5 +1,4 @@
 name: Verify Pipeline Determinism
-
 on:
   push:
     branches: [ main, master, 'claude/**' ]
