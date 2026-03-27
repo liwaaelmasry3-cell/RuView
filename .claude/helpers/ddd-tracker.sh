@@ -17,7 +17,7 @@ mkdir -p "$METRICS_DIR"
 DOMAINS=("agent-lifecycle" "task-execution" "memory-management" "coordination" "shared-kernel")
 
 should_run() {
-  if [ ! -f "$LAST_RUN_FILE" ]; then return 0; fi
+  if [ ! -f "$LAST_RUN_FILE" ]; then return 0;fi
   local last_run=$(cat "$LAST_RUN_FILE" 2>/dev/null || echo "0")
   local now=$(date +%s)
   [ $((now - last_run)) -ge 600 ]  # 10 minutes
