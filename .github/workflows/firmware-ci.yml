@@ -16,7 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: espressif/idf:v5.2
-
     steps:
       - uses: actions/checkout@v4
 
