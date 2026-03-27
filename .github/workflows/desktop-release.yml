@@ -1,5 +1,4 @@
 name: Desktop Release
-
 on:
   push:
     tags:
