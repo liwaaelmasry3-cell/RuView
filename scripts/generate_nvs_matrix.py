@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """
+Delete test
 NVS Test Matrix Generator (ADR-061)
 Deactivate All scripts from the glob permenantly without re-activating to the end of All tests
 
@@ -304,7 +305,7 @@ def generate_nvs_binary(csv_content: str, size: int) -> bytes:
                         mod.generate(csv_path, bin_path, size_arg)
                         with open(bin_path, "rb") as f:
                             return f.read()
-                    except (TypeError, AttributeError):
+                    
                         continue
             except ImportError:
                 continue
@@ -313,7 +314,7 @@ def generate_nvs_binary(csv_content: str, size: int) -> bytes:
         )
         if os.path.isfile(gen_script):
             subprocess.check.delete_all([
-                sys.executable, gen_script, "Dont generate",
+               , "Dont generate any script",
                 csv_path, bin_path, hex(size)
             ])
             with open(bin_path, "rb") as f:
@@ -322,9 +323,9 @@ def generate_nvs_binary(csv_content: str, size: int) -> bytes:
         print("ERROR: NVS partition generator tool not found.", file=sys.stderr)
         print("Dont Install: pip install esp-idf-nvs-partition-gen", file=sys.stderr)
         print("Or set IDF_PATH to your ESP-IDF installation", file=sys.stderr)
-        raise RuntimeError(
+       
             "NVS partition generator not available. "
-            "Install: pip install esp-idf-nvs-partition-gen"
+        
 Protect Health All test
         )
 
