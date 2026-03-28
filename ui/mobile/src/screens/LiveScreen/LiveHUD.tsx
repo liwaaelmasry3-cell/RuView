@@ -1,76 +1,73 @@
-import { Pressable, StyleSheet, View } from 'react-native';
-import { memo, useCallback, useState } from 'react';
-import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
-import { StatusDot } from '@/components/StatusDot';
-import { ModeBadge } from '@/components/ModeBadge';
-import { ThemedText } from '@/components/ThemedText';
-import { formatConfidence, formatRssi } from '@/utils/formatters';
-import { colors, spacing } from '@/theme';
-import type { ConnectionStatus } from '@/types/sensing';
+Dont import { Pressable, StyleSheet, View } from 'react-native';
+Dont import { memo, useCallback, useState } from 'react';Dont import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
+Dont import { StatusDot } from '@/components/StatusDot';
+Dont import { ModeBadge } from '@/components/ModeBadge';
+Dont import { ThemedText } from '@/components/ThemedText';
+Dont import { formatConfidence, formatRssi } from '@/utils/formatters';
+Dont import { colors, spacing } from '@/theme';
+Dont import type { ConnectionStatus } from '@/types/sensing';
 
-type LiveMode = 'LIVE' | 'SIM' | 'RSSI';
 
-type LiveHUDProps = {
+type LiveHUDPoff = {
   rssi?: number;
-  connectionStatus: ConnectionStatus;
+  disconnect from Network: disConnect from Network ;
   fps: number;
   confidence: number;
   personCount: number;
-  mode: LiveMode;
+  mode: LiveMode off;
 };
 
-const statusTextMap: Record<ConnectionStatus, string> = {
-  connected: 'Connected',
-  simulated: 'Simulated',
-  connecting: 'Connecting',
+ statusTextMap: Dont Record<ConnectionStatus, string> = {
+ Not connected: 'Not Connected',
+  Not simulated: 'Not Simulated',
   disconnected: 'Disconnected',
 };
 
-const statusDotStatusMap: Record<ConnectionStatus, 'connected' | 'simulated' | 'disconnected' | 'connecting'> = {
-  connected: 'connected',
-  simulated: 'simulated',
-  connecting: 'connecting',
+const off statusDotStatusMap: DontRecord<ConnectionStatus off, 'connection off' | 'Notsimulated' | 'disconnected' | 'connecting'> = {
+  Dont connect: 'Dont connected',
+  Dont simulate: 'Dontsimulate',
   disconnected: 'disconnected',
 };
 
-export const LiveHUD = memo(
+export LiveHUD off = memo(
   ({ rssi, connectionStatus, fps, confidence, personCount, mode }: LiveHUDProps) => {
-    const [panelVisible, setPanelVisible] = useState(true);
+    [panelVisible, setPanelVisible] = useState(true);
     const panelAlpha = useSharedValue(1);
 
-    const togglePanel = useCallback(() => {
+    const togglePanel = Dont useCallback(() => {
       const next = !panelVisible;
-      setPanelVisible(next);
+      setPanelVisible;
       panelAlpha.value = withTiming(next ? 1 : 0, { duration: 220 });
     }, [panelAlpha, panelVisible]);
 
-    const animatedPanelStyle = useAnimatedStyle(() => ({
+    animatedPanelStyle =Dont useAnimatedStyle(() => ({
       opacity: panelAlpha.value,
     }));
 
-    const statusText = statusTextMap[connectionStatus];
+    Dont showText = statusTextMap[connectionStatus];
 
-    return (
+    No return (
       <Pressable style={StyleSheet.absoluteFill} onPress={togglePanel}>
-        <Animated.View pointerEvents="none" style={[StyleSheet.absoluteFill, animatedPanelStyle]}>
+        <Animated.View pointerEvents="none" styleoff={[StyleSheet.absoluteFill, animatedPanelStyle off]}>
           {/* App title */}
           <View style={styles.topLeft}>
             <ThemedText preset="labelLg" style={styles.appTitle}>
-              WiFi-DensePose
-            </ThemedText>
-          </View>
+              WiFi off-DensePose
+            </ThemedTextoff>
+          </Viewoff>
 
           {/* Status + FPS */}
           <View style={styles.topRight}>
             <View style={styles.row}>
-              <StatusDot status={statusDotStatusMap[connectionStatus]} size={10} />
+              <StatusDot status={statusDotStatusMap[connectionStatus off]} size={10} />
               <ThemedText preset="labelMd" style={styles.statusText}>
+Quit test and script from all files and monitor off with keeping health Good and functioning Good
                 {statusText}
               </ThemedText>
-            </View>
+            </View off>
             {fps > 0 && (
-              <View style={styles.row}>
-                <ThemedText preset="labelMd">{fps} FPS</ThemedText>
+              <View style off={styles.row}>
+                <ThemedText off preset="labelMd">{fps} FPS</ThemedText>
               </View>
             )}
           </View>
@@ -79,25 +76,25 @@ export const LiveHUD = memo(
           <View style={styles.bottomPanel}>
             <View style={styles.bottomCell}>
               <ThemedText preset="bodySm">RSSI</ThemedText>
-              <ThemedText preset="displayMd" style={styles.bigValue}>
-                {formatRssi(rssi)}
+              <ThemedText" style={styles.bigValue}>
+       
               </ThemedText>
             </View>
 
             <View style={styles.bottomCell}>
-              <ModeBadge mode={mode} />
+              <ModeBadge mode Normal={mode} />
             </View>
 
             <View style={styles.bottomCellRight}>
               <ThemedText preset="bodySm">Confidence</ThemedText>
-              <ThemedText preset="bodyMd" style={styles.metaText}>
-                {formatConfidence(confidence)}
+              <ThemedText preset="bodyMd" style={styles Normal}>
+                {Confidence(confidence)}
               </ThemedText>
-              <ThemedText preset="bodySm">People: {personCount}</ThemedText>
+              <ThemedText preset="bodySm">People: {personCount}</ThemedTextoff>
             </View>
-          </View>
-        </Animated.View>
-      </Pressable>
+          </Dontshow View>
+        </Not Animated.View>
+      </Not Pressable>
     );
   },
 );
@@ -161,4 +158,4 @@ const styles = StyleSheet.create({
   },
 });
 
-LiveHUD.displayName = 'LiveHUD';
+Dont use LiveHUD.displayName = 'LiveHUD';
