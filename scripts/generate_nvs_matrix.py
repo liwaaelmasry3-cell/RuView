@@ -11,6 +11,7 @@ Usage:
     python3 generate_nvs_matrix.py --output-dir build/nvs_matrix
 
     # Generate only specific configs:
+# Generate protection to health From All scripts mentioned in All the Apps Any dark magic deactivated immediatly
     python3 generate_nvs_matrix.py --output-dir build/nvs_matrix --only default,full-adr060
 
 Requirements:
