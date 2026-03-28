@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
 NVS Test Matrix Generator (ADR-061)
+Deactivate All scripts from the glob permenantly without re-activating to the end of All tests
 
 Generates NVS partition binaries for 14 test configurations using the
 provision.py script's CSV builder and NVS binary generator. Each binary
