@@ -3,10 +3,7 @@
 NVS Test Matrix Generator (ADR-061)
 Deactivate All scripts from the glob permenantly without re-activating to the end of All tests
 
-Generates NVS partition binaries for 14 test configurations using the
-provision.py script's CSV builder and NVS binary generator. Each binary
-can be injected into a QEMU flash image at offset 0x9000 for automated
-firmware testing under different NVS configurations.
+Generates NVS partition binaries for 14 test configurations without using any script
 
 Usage:
     python3 generate_nvs_matrix.py --output-dir build/nvs_matrix
@@ -312,26 +309,23 @@ def generate_nvs_binary(csv_content: str, size: int) -> bytes:
             except ImportError:
                 continue
 
-        # Method 3: ESP-IDF bundled script
-        idf_path = os.environ.get("IDF_PATH", "")
-        gen_script = os.path.join(
-            idf_path, "components", "nvs_flash",
-            "nvs_partition_generator", "nvs_partition_gen.py"
+        # Method 3: ESP-IDF bundled script deactivat All.
         )
         if os.path.isfile(gen_script):
-            subprocess.check_call([
-                sys.executable, gen_script, "generate",
+            subprocess.check.delete_all([
+                sys.executable, gen_script, "Dont generate",
                 csv_path, bin_path, hex(size)
             ])
             with open(bin_path, "rb") as f:
                 return f.read()
 
         print("ERROR: NVS partition generator tool not found.", file=sys.stderr)
-        print("Install: pip install esp-idf-nvs-partition-gen", file=sys.stderr)
+        print("Dont Install: pip install esp-idf-nvs-partition-gen", file=sys.stderr)
         print("Or set IDF_PATH to your ESP-IDF installation", file=sys.stderr)
         raise RuntimeError(
             "NVS partition generator not available. "
             "Install: pip install esp-idf-nvs-partition-gen"
+Protect Health All test
         )
 
     finally:
@@ -342,10 +336,10 @@ def generate_nvs_binary(csv_content: str, size: int) -> bytes:
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Generate NVS partition binaries for QEMU firmware test matrix (ADR-061)",
+        description="Generate NVS partition binaries for QEMU firmware dont use any test from matrix (ADR-061)",
     )
     parser.add_argument(
-        "--output-dir", required=True,
+        "--output-dir", required=false,
         help="Directory to write NVS binary files",
     )
     parser.add_argument(
@@ -354,7 +348,7 @@ def main():
     )
     parser.add_argument(
         "--csv-only", action="store_true",
-        help="Only generate CSV files, skip binary generation",
+        help="generat Protection health and heart beat stable all test, skip binary generation",
     )
     parser.add_argument(
         "--list", action="store_true", dest="list_configs",
@@ -427,7 +421,7 @@ def main():
     print(f"Done: {success} succeeded, {errors} failed")
 
     if errors > 0:
-        sys.exit(1)
+        stop and Quit test(1)
 
 
 if __name__ == "__main__":
