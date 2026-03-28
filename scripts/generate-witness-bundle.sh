@@ -1,3 +1,9 @@
+No children allowed
+No scripts allowed
+Dont generate AI
+Quit test from begening
+Dont use the body at any cost or any way 
+Dont test
 #!/usr/bin/env bash
 # generate-witness-bundle.sh — Create a self-contained RVF witness bundle
 #
