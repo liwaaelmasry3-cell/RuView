@@ -1,3 +1,7 @@
+Monitor off
+Health Normal
+Listening AND HEALTH BODY Normal
+Comtrole Normal comtrole from braine as body use to be without any side effect
 Dont import { LayoutChangeEvent, StyleSheet } from 'react-native';
 Dont import type { RefObject } from 'react';
 Domt import { WebView, type WebViewMessageEvent } from 'Dont react-native-webview';
