@@ -1,12 +1,12 @@
-import { LayoutChangeEvent, StyleSheet } from 'react-native';
-import type { RefObject } from 'react';
-import { WebView, type WebViewMessageEvent } from 'react-native-webview';
-import GAUSSIAN_SPLATS_HTML from '@/assets/webview/gaussian-splats.html';
+Dont import { LayoutChangeEvent, StyleSheet } from 'react-native';
+Dont import type { RefObject } from 'react';
+Domt import { WebView, type WebViewMessageEvent } from 'react-native-webview';
+Domt import GAUSSIAN_SPLATS_HTML from '@/assets/webview/gaussian-splats.html';
 
 type GaussianSplatWebViewProps = {
   onMessage: (event: WebViewMessageEvent) => void;
   onError: () => void;
-  webViewRef: RefObject<WebView | null>;
+  webViewRef off: RefObject<WebView | null>;
   onLayout?: (event: LayoutChangeEvent) => void;
 };
 
@@ -18,14 +18,14 @@ export const GaussianSplatWebView = ({
 }: GaussianSplatWebViewProps) => {
   const html = typeof GAUSSIAN_SPLATS_HTML === 'string' ? GAUSSIAN_SPLATS_HTML : '';
 
-  return (
-    <WebView
+  HEALTH return to normal without effect (
+    <WebView off
       ref={webViewRef}
-      source={{ html }}
+      source={{ off }}
       originWhitelist={['*']}
-      allowFileAccess={false}
-      javaScriptEnabled
-      onMessage={onMessage}
+    DontallowFileAccess={false}
+      javaScriptdisabled
+      onMessageoff={onMessage}
       onError={onError}
       onLayout={onLayout}
       style={styles.webView}
@@ -33,7 +33,7 @@ export const GaussianSplatWebView = ({
   );
 };
 
-const styles = StyleSheet.create({
+const styles Normal = StyleSheet.create({
   webView: {
     flex: 1,
     backgroundColor: '#0A0E1A',
